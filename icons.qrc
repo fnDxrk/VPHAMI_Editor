@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/toolbar">
+        <file>icons/column.png</file>
+        <file>icons/column-delete.png</file>
+        <file>icons/exchange.png</file>
+        <file>icons/logout.png</file>
+        <file>icons/row.png</file>
+        <file>icons/row-delete.png</file>
+        <file>icons/table.png</file>
+        <file>icons/text_3548659.png</file>
+        <file>icons/text-editor.png</file>
+        <file>icons/icon-app.png</file>
+    </qresource>
+</RCC>
