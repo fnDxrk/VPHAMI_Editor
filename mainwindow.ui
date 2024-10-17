@@ -230,7 +230,8 @@
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionNew">
    <property name="icon">
-    <iconset theme="QIcon::ThemeIcon::DocumentNew"/>
+    <iconset resource="icons.qrc">
+     <normaloff>:/toolbar/icons/new-doc.png</normaloff>:/toolbar/icons/new-doc.png</iconset>
    </property>
    <property name="text">
     <string>New</string>
@@ -241,7 +242,8 @@
   </action>
   <action name="actionOpen">
    <property name="icon">
-    <iconset theme="QIcon::ThemeIcon::DocumentOpen"/>
+    <iconset resource="icons.qrc">
+     <normaloff>:/toolbar/icons/upload.png</normaloff>:/toolbar/icons/upload.png</iconset>
    </property>
    <property name="text">
     <string>Open</string>
@@ -251,11 +253,9 @@
    </property>
   </action>
   <action name="actionSave">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
    <property name="icon">
-    <iconset theme="QIcon::ThemeIcon::DocumentSave"/>
+    <iconset resource="icons.qrc">
+     <normaloff>:/toolbar/icons/save.png</normaloff>:/toolbar/icons/save.png</iconset>
    </property>
    <property name="text">
     <string>Save</string>
@@ -278,7 +278,8 @@
   </action>
   <action name="actionFind">
    <property name="icon">
-    <iconset theme="QIcon::ThemeIcon::EditFind"/>
+    <iconset resource="icons.qrc">
+     <normaloff>:/toolbar/icons/search.png</normaloff>:/toolbar/icons/search.png</iconset>
    </property>
    <property name="text">
     <string>Find</string>
@@ -289,7 +290,8 @@
   </action>
   <action name="actionClear">
    <property name="icon">
-    <iconset theme="QIcon::ThemeIcon::EditDelete"/>
+    <iconset resource="icons.qrc">
+     <normaloff>:/toolbar/icons/trash.png</normaloff>:/toolbar/icons/trash.png</iconset>
    </property>
    <property name="text">
     <string>Clear</string>
@@ -300,7 +302,8 @@
   </action>
   <action name="actionUndo">
    <property name="icon">
-    <iconset theme="QIcon::ThemeIcon::EditUndo"/>
+    <iconset resource="icons.qrc">
+     <normaloff>:/toolbar/icons/undo.png</normaloff>:/toolbar/icons/undo.png</iconset>
    </property>
    <property name="text">
     <string>Undo</string>
@@ -311,7 +314,8 @@
   </action>
   <action name="actionCopy">
    <property name="icon">
-    <iconset theme="QIcon::ThemeIcon::EditCopy"/>
+    <iconset resource="icons.qrc">
+     <normaloff>:/toolbar/icons/copy.png</normaloff>:/toolbar/icons/copy.png</iconset>
    </property>
    <property name="text">
     <string>Copy</string>
@@ -322,7 +326,8 @@
   </action>
   <action name="actionPaste">
    <property name="icon">
-    <iconset theme="QIcon::ThemeIcon::EditPaste"/>
+    <iconset resource="icons.qrc">
+     <normaloff>:/toolbar/icons/paste.png</normaloff>:/toolbar/icons/paste.png</iconset>
    </property>
    <property name="text">
     <string>Paste</string>
@@ -342,7 +347,8 @@
   </action>
   <action name="actionRedo">
    <property name="icon">
-    <iconset theme="QIcon::ThemeIcon::EditRedo"/>
+    <iconset resource="icons.qrc">
+     <normaloff>:/toolbar/icons/redo.png</normaloff>:/toolbar/icons/redo.png</iconset>
    </property>
    <property name="text">
     <string>Redo</string>
@@ -380,7 +386,8 @@
   </action>
   <action name="actionBold">
    <property name="icon">
-    <iconset theme="QIcon::ThemeIcon::FormatTextBold"/>
+    <iconset resource="icons.qrc">
+     <normaloff>:/toolbar/icons/bold-text.png</normaloff>:/toolbar/icons/bold-text.png</iconset>
    </property>
    <property name="text">
     <string>Bold</string>
@@ -394,7 +401,8 @@
   </action>
   <action name="actionUnderline">
    <property name="icon">
-    <iconset theme="QIcon::ThemeIcon::FormatTextUnderline"/>
+    <iconset resource="icons.qrc">
+     <normaloff>:/toolbar/icons/underline.png</normaloff>:/toolbar/icons/underline.png</iconset>
    </property>
    <property name="text">
     <string>Underline</string>
@@ -405,7 +413,8 @@
   </action>
   <action name="actionItalic">
    <property name="icon">
-    <iconset theme="QIcon::ThemeIcon::FormatTextItalic"/>
+    <iconset resource="icons.qrc">
+     <normaloff>:/toolbar/icons/italic.png</normaloff>:/toolbar/icons/italic.png</iconset>
    </property>
    <property name="text">
     <string>Italic</string>
@@ -416,7 +425,8 @@
   </action>
   <action name="actionStrike">
    <property name="icon">
-    <iconset theme="QIcon::ThemeIcon::FormatTextStrikethrough"/>
+    <iconset resource="icons.qrc">
+     <normaloff>:/toolbar/icons/crossed-out.png</normaloff>:/toolbar/icons/crossed-out.png</iconset>
    </property>
    <property name="text">
     <string>Crossed</string>
