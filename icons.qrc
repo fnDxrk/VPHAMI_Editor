@@ -10,5 +10,18 @@
         <file>icons/text_3548659.png</file>
         <file>icons/text-editor.png</file>
         <file>icons/icon-app.png</file>
+        <file>icons/bold-text.png</file>
+        <file>icons/copy.png</file>
+        <file>icons/crossed-out.png</file>
+        <file>icons/italic.png</file>
+        <file>icons/new-doc.png</file>
+        <file>icons/paste.png</file>
+        <file>icons/redo.png</file>
+        <file>icons/save.png</file>
+        <file>icons/search.png</file>
+        <file>icons/trash.png</file>
+        <file>icons/underline.png</file>
+        <file>icons/undo.png</file>
+        <file>icons/upload.png</file>
     </qresource>
 </RCC>
