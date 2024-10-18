@@ -20,6 +20,7 @@ private slots:
     void on_actionNew_triggered();       // Создание нового файла
     void on_actionOpen_triggered();    // Открытие файла
     void on_actionSave_triggered();  // Сохранение файла
+    void on_actionFind_triggered(); // Поиск в тексте
 
 private:
     Ui::MainWindow *ui;

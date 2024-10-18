@@ -1,7 +1,18 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "text_funcs.h"
 #include <QFileDialog>
 #include <QMessageBox>
+#include <QTextStream>
+#include <QVBoxLayout>
+#include <QInputDialog>
+#include <QFontDialog>
+#include <QDebug>
+#include <QSpinBox>
+#include <QLabel>
+#include <QDialogButtonBox>
+#include <QSettings>
+#include <QTextTable>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -49,6 +60,33 @@ void MainWindow::on_actionSave_triggered() {
         QString content = ui->textEdit->toPlainText();
         if (!fileHandler.saveFile(currentFilePath, content)) {
             QMessageBox::warning(this, "Warning", "Failed to save file!");
+        }
+    }
+}
+
+void MainWindow::on_actionFind_triggered() {
+    QDialog dialog(this);
+    dialog.setWindowTitle("Find");
+
+    QLineEdit *findLineEdit = new QLineEdit(&dialog);
+    QLabel *label = new QLabel("Enter text to find:", &dialog);
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, &dialog);
+
+    QVBoxLayout *layout = new QVBoxLayout(&dialog);
+    layout->addWidget(label);
+    layout->addWidget(findLineEdit);
+    layout->addWidget(buttonBox);
+
+    connect(buttonBox, &QDialogButtonBox::accepted, &dialog, &QDialog::accept);
+    connect(buttonBox, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);
+
+    if (dialog.exec() == QDialog::Accepted) {
+        QString text = findLineEdit->text().trimmed();
+
+        if (!text.isEmpty()) {
+            EditFunctions::findText(ui->textEdit, text);
+        } else {
+            QMessageBox::warning(this, "Warning", "Please enter text to search.");
         }
     }
 }
