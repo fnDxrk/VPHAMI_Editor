@@ -21,6 +21,7 @@ private slots:
     void on_actionOpen_triggered();    // Открытие файла
     void on_actionSave_triggered();  // Сохранение файла
     void on_actionFind_triggered(); // Поиск в тексте
+    void on_actionClear_triggered(); // Очистка текста
 
 private:
     Ui::MainWindow *ui;

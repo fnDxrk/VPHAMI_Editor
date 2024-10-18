@@ -29,3 +29,8 @@ void EditFunctions::findText(QTextEdit *textEdit, const QString &text)
         QMessageBox::information(textEdit, "Search", "Text not found.");
     }
 }
+
+void EditFunctions::clearText(QTextEdit *textEdit)
+{
+    textEdit->clear();
+}

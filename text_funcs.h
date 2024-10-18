@@ -9,6 +9,8 @@ public:
     // Поиск в тексте
     static void findText(QTextEdit *textEdit, const QString &text);
 
+    // Очистка текста
+    static void clearText(QTextEdit *textEdit);
 };
 
 #endif // TEXT_FUNCS_H

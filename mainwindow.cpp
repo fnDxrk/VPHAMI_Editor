@@ -91,7 +91,9 @@ void MainWindow::on_actionFind_triggered() {
     }
 }
 
-
+void MainWindow::on_actionClear_triggered() {
+    EditFunctions::clearText(ui->textEdit);
+}
 
 
 
