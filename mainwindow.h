@@ -18,7 +18,7 @@ public:
 
 private slots:
     void on_actionNew_triggered();      // Создание нового файла
-
+    void on_actionOpen_triggered();   // Открытие файла
 
 private:
     Ui::MainWindow *ui;

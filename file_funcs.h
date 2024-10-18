@@ -10,7 +10,8 @@ public:
     // Создание нового файла
     bool createFile(const QString& filePath);
 
-
+    // Открытие существующего файла
+    QString openFile(const QString& filePath);
 };
 
 #endif // FILEHANDLER_H

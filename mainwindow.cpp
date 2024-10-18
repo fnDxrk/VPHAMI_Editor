@@ -27,6 +27,19 @@ void MainWindow::on_actionNew_triggered() {
     }
 }
 
+void MainWindow::on_actionOpen_triggered() {
+    QString filePath = QFileDialog::getOpenFileName(this, "Open File");
+    if (!filePath.isEmpty()) {
+        QString content = fileHandler.openFile(filePath);
+        if (!content.isEmpty()) {
+            currentFilePath = filePath;
+            ui->textEdit->setPlainText(content);
+        } else {
+            QMessageBox::warning(this, "Warning", "Failed to open file!");
+        }
+    }
+}
+
 
 
 
