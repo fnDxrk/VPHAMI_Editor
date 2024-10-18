@@ -17,6 +17,9 @@
    <iconset resource="icons.qrc">
     <normaloff>:/toolbar/icons/icon-app.png</normaloff>:/toolbar/icons/icon-app.png</iconset>
   </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonStyle::ToolButtonIconOnly</enum>
+  </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
