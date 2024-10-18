@@ -44,3 +44,13 @@ void EditFunctions::redoText(QTextEdit *textEdit)
 {
     textEdit->redo();
 }
+
+void EditFunctions::copyText(QTextEdit *textEdit)
+{
+    textEdit->copy();
+}
+
+void EditFunctions::pasteText(QTextEdit *textEdit)
+{
+    textEdit->paste();
+}

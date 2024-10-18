@@ -103,5 +103,11 @@ void MainWindow::on_actionRedo_triggered() {
     EditFunctions::redoText(ui->textEdit);
 }
 
+void MainWindow::on_actionCopy_triggered() {
+    EditFunctions::copyText(ui->textEdit);
+}
 
+void MainWindow::on_actionPaste_triggered() {
+    EditFunctions::pasteText(ui->textEdit);
+}
 
