@@ -11,6 +11,12 @@ public:
 
     // Очистка текста
     static void clearText(QTextEdit *textEdit);
+
+    //Отмена последнего изменения
+    static void undoText(QTextEdit *textEdit);
+
+    //Возврат к последнему изменению
+    static void redoText(QTextEdit *textEdit);
 };
 
 #endif // TEXT_FUNCS_H

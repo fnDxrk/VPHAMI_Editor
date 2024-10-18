@@ -95,7 +95,13 @@ void MainWindow::on_actionClear_triggered() {
     EditFunctions::clearText(ui->textEdit);
 }
 
+void MainWindow::on_actionUndo_triggered() {
+    EditFunctions::undoText(ui->textEdit);
+}
 
+void MainWindow::on_actionRedo_triggered() {
+    EditFunctions::redoText(ui->textEdit);
+}
 
 
 

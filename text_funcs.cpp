@@ -34,3 +34,13 @@ void EditFunctions::clearText(QTextEdit *textEdit)
 {
     textEdit->clear();
 }
+
+void EditFunctions::undoText(QTextEdit *textEdit)
+{
+    textEdit->undo();
+}
+
+void EditFunctions::redoText(QTextEdit *textEdit)
+{
+    textEdit->redo();
+}
