@@ -17,8 +17,9 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_actionNew_triggered();      // Создание нового файла
-    void on_actionOpen_triggered();   // Открытие файла
+    void on_actionNew_triggered();       // Создание нового файла
+    void on_actionOpen_triggered();    // Открытие файла
+    void on_actionSave_triggered();  // Сохранение файла
 
 private:
     Ui::MainWindow *ui;

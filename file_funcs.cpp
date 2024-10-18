@@ -26,4 +26,15 @@ QString FileHandler::openFile(const QString& filePath) {
     return content;
 }
 
+bool FileHandler::saveFile(const QString& filePath, const QString& content) {
+    QFile file(filePath);
+    if (!file.open(QIODevice::WriteOnly)) {
+        return false;
+    }
 
+    QTextStream out(&file);
+    out << content;
+    file.close();
+
+    return true;
+}

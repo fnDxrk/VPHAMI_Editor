@@ -12,6 +12,9 @@ public:
 
     // Открытие существующего файла
     QString openFile(const QString& filePath);
+
+    // Сохранение файла
+    bool saveFile(const QString& filePath, const QString& content);
 };
 
 #endif // FILEHANDLER_H

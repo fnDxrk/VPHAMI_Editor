@@ -40,7 +40,18 @@ void MainWindow::on_actionOpen_triggered() {
     }
 }
 
+void MainWindow::on_actionSave_triggered() {
+    if (currentFilePath.isEmpty()) {
+        currentFilePath = QFileDialog::getSaveFileName(this, "Save File");
+    }
 
+    if (!currentFilePath.isEmpty()) {
+        QString content = ui->textEdit->toPlainText();
+        if (!fileHandler.saveFile(currentFilePath, content)) {
+            QMessageBox::warning(this, "Warning", "Failed to save file!");
+        }
+    }
+}
 
 
 
