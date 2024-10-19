@@ -9,6 +9,9 @@ public:
     // Поиск в тексте
     static void findText(QTextEdit *textEdit, const QString &text);
 
+    // Замена в тексте
+    static void replaceText(QTextEdit *textEdit, const QString &oldText, const QString &newText);
+
     // Очистка текста
     static void clearText(QTextEdit *textEdit);
 

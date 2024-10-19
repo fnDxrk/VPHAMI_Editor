@@ -30,6 +30,16 @@ void EditFunctions::findText(QTextEdit *textEdit, const QString &text)
     }
 }
 
+void EditFunctions::replaceText(QTextEdit *textEdit, const QString &oldText, const QString &newText) {
+    if (!textEdit || oldText.isEmpty()) {
+        return;
+    }
+
+    QString documentText = textEdit->toPlainText();
+    documentText.replace(oldText, newText);
+    textEdit->setPlainText(documentText);
+}
+
 void EditFunctions::clearText(QTextEdit *textEdit)
 {
     textEdit->clear();

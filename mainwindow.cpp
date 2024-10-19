@@ -91,6 +91,36 @@ void MainWindow::on_actionFind_triggered() {
     }
 }
 
+void MainWindow::on_actionReplace_triggered() {
+    QDialog dialog(this);
+    dialog.setWindowTitle("Replace");
+
+    QLineEdit *oldTextLineEdit = new QLineEdit(&dialog);
+    QLineEdit *newTextLineEdit = new QLineEdit(&dialog);
+    QLabel *labelOld = new QLabel("Enter text to replace:", &dialog);
+    QLabel *labelNew = new QLabel("Enter new text:", &dialog);
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, &dialog);
+
+    QVBoxLayout *layout = new QVBoxLayout(&dialog);
+    layout->addWidget(labelOld);
+    layout->addWidget(oldTextLineEdit);
+    layout->addWidget(labelNew);
+    layout->addWidget(newTextLineEdit);
+    layout->addWidget(buttonBox);
+
+    connect(buttonBox, &QDialogButtonBox::accepted, &dialog, &QDialog::accept);
+    connect(buttonBox, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);
+
+    if (dialog.exec() == QDialog::Accepted) {
+        QString oldText = oldTextLineEdit->text();
+        QString newText = newTextLineEdit->text();
+
+        if (!oldText.isEmpty() && !newText.isEmpty()) {
+            EditFunctions::replaceText(ui->textEdit, oldText, newText);
+        }
+    }
+}
+
 void MainWindow::on_actionClear_triggered() {
     EditFunctions::clearText(ui->textEdit);
 }
