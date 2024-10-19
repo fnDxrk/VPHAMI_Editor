@@ -20,6 +20,13 @@ private slots:
     void on_actionNew_triggered();       // Создание нового файла
     void on_actionOpen_triggered();    // Открытие файла
     void on_actionSave_triggered();  // Сохранение файла
+    void on_actionFind_triggered(); // Поиск в тексте
+    void on_actionReplace_triggered(); // Замена в тексте
+    void on_actionClear_triggered(); // Очистка текста
+    void on_actionUndo_triggered(); // Отмена последнего изменения
+    void on_actionRedo_triggered(); // Возврат к последнему изменению
+    void on_actionCopy_triggered(); // Копирование текста
+    void on_actionPaste_triggered(); // Вставка текста
 
 private:
     Ui::MainWindow *ui;

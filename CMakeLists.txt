@@ -25,6 +25,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
         icons.qrc
         file_funcs.h file_funcs.cpp
+        text_funcs.h text_funcs.cpp
 
 
 
