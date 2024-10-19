@@ -16,6 +16,9 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+protected:
+    void closeEvent(QCloseEvent *event) override;
+
 private slots:
     void on_actionNew_triggered();       // Создание нового файла
     void on_actionOpen_triggered();    // Открытие файла
@@ -32,6 +35,7 @@ private:
     Ui::MainWindow *ui;
     FileHandler fileHandler;
     QString currentFilePath;  // Хранение пути к открытому файлу
+    bool isModified = false;
 };
 
 #endif // MAINWINDOW_H
