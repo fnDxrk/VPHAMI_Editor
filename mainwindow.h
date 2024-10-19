@@ -30,6 +30,7 @@ private slots:
     void on_actionRedo_triggered(); // Возврат к последнему изменению
     void on_actionCopy_triggered(); // Копирование текста
     void on_actionPaste_triggered(); // Вставка текста
+    void on_actionExit_triggered(); // Закрытие файла
 
 private:
     Ui::MainWindow *ui;

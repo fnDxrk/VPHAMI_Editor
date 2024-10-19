@@ -187,3 +187,9 @@ void MainWindow::on_actionPaste_triggered() {
     EditFunctions::pasteText(ui->textEdit);
 }
 
+
+void MainWindow::on_actionExit_triggered()
+{
+    close();
+}
+
