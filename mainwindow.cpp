@@ -20,6 +20,12 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    // Отслеживание изменений текста
+    connect(ui->textEdit, &QTextEdit::textChanged, this, [this]() {
+        if (!ui->textEdit->document()->isModified()) {
+            isModified = true;
+        }
+    });
 }
 
 MainWindow::~MainWindow() {
@@ -60,7 +66,47 @@ void MainWindow::on_actionSave_triggered() {
         QString content = ui->textEdit->toPlainText();
         if (!fileHandler.saveFile(currentFilePath, content)) {
             QMessageBox::warning(this, "Warning", "Failed to save file!");
+        } else {
+            ui->textEdit->document()->setModified(false);
         }
+    }
+}
+
+void MainWindow::closeEvent(QCloseEvent *event) {
+    // Проверяем, был ли изменен текст в редакторе
+    if (ui->textEdit->document()->isModified()) {
+        QMessageBox::StandardButton reply;
+
+        if (currentFilePath.isEmpty()) {
+            // Если файл еще не сохранен (новый файл)
+            reply = QMessageBox::question(
+                this, "Save File",
+                "The document has been modified. Do you want to save it?",
+                QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel
+                );
+        } else {
+            // Если файл уже существует
+            reply = QMessageBox::question(
+                this, "Save File",
+                "The document has been modified. Do you want to save changes to the current file?",
+                QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel
+                );
+        }
+
+        if (reply == QMessageBox::Yes) {
+            on_actionSave_triggered();
+            if (!ui->textEdit->document()->isModified()) {
+                event->accept();
+            } else {
+                event->ignore();
+            }
+        } else if (reply == QMessageBox::No) {
+            event->accept();
+        } else {
+            event->ignore();
+        }
+    } else {
+        event->accept();
     }
 }
 
@@ -139,5 +185,11 @@ void MainWindow::on_actionCopy_triggered() {
 
 void MainWindow::on_actionPaste_triggered() {
     EditFunctions::pasteText(ui->textEdit);
+}
+
+
+void MainWindow::on_actionExit_triggered()
+{
+    close();
 }
 
