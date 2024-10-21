@@ -26,6 +26,10 @@ public:
 
     // Вставка текста
     static void pasteText(QTextEdit *textEdit);
+
+private:
+    static QString lastContent;  // Хранение предыдущего содержимого для Undo
+    static bool isCleared;        // Флаг для отслеживания очистки
 };
 
 #endif // TEXT_FUNCS_H
