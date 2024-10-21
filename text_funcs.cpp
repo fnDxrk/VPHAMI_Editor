@@ -4,6 +4,9 @@
 #include <QMessageBox>
 #include <QTextCursor>
 
+QString EditFunctions::lastContent = "";  // Инициализация переменной для хранения содержимого
+bool EditFunctions::isCleared = false;    // Изначально текст не очищен
+
 void EditFunctions::findText(QTextEdit *textEdit, const QString &text)
 {
     if (text.isEmpty()) {
@@ -40,19 +43,24 @@ void EditFunctions::replaceText(QTextEdit *textEdit, const QString &oldText, con
     textEdit->setPlainText(documentText);
 }
 
-void EditFunctions::clearText(QTextEdit *textEdit)
-{
+void EditFunctions::clearText(QTextEdit *textEdit) {
+    lastContent = textEdit->toPlainText();
     textEdit->clear();
+    isCleared = true;
 }
 
-void EditFunctions::undoText(QTextEdit *textEdit)
-{
-    textEdit->undo();
+void EditFunctions::undoText(QTextEdit *textEdit) {
+    if (isCleared) {
+        textEdit->setPlainText(lastContent);
+        isCleared = false;
+    }
 }
 
-void EditFunctions::redoText(QTextEdit *textEdit)
-{
-    textEdit->redo();
+void EditFunctions::redoText(QTextEdit *textEdit) {
+    if (!lastContent.isEmpty() && !isCleared) {
+        textEdit->clear();
+        isCleared = true;
+    }
 }
 
 void EditFunctions::copyText(QTextEdit *textEdit)
